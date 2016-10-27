@@ -1,9 +1,12 @@
 <template name="Recipe">
-    <article class="recipe">
+    <!-- Check if 'inMenu' exists, add 'in-menu' CSS class if, yes.-->
+    <article class="recipe {{#if inMenu}}in-menu{{/if}}">
         <h3>{{name}}</h3>
         <p>{{desc}}</p>
         <p>
+            <!--Iterate through each ingredient-->
             {{#each ingredients}}
+                <!--Create a <span> with 'name' and 'amount' of each ingredient. -->
                 <span class="ingredient">{{name}} - {{amount}}</span>
             {{/each}}
         </p>

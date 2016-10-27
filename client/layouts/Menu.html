@@ -1,0 +1,11 @@
+<template name="Menu">
+    <h1 class="page-title">My Current Menu</h1>
+    <!--Iterate through recipes and display 'name' and 'desc' of each one. -->
+    {{#each recipes}}
+        <!--Display 'name' info-->
+        <h3>{{name}}</h3>
+        <!--Display 'desc' info-->
+        <p>{{desc}}</p>
+    {{/each}}
+
+</template>
