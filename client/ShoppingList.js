@@ -1,5 +1,5 @@
-//When the 'Menu" template is created, run this code.
-Template.Menu.onCreated(function () {
+//When the 'ShoppingList" template is created, run this code.
+Template.ShoppingList.onCreated(function () {
     var self = this;
     //autorun resets the subscriptions of 'self'
     self.autorun(function () {
@@ -7,9 +7,9 @@ Template.Menu.onCreated(function () {
     });
 });
 
-//'recipes' will be a cursor for all returned 'Recipes'
-Template.Menu.helpers({
-    recipes: ()=> {
+//'shoppingList' will be a cursor for all returned 'Recipes'
+Template.ShoppingList.helpers({
+    shoppingList: ()=> {
         //Return only the recipes that have 'inMenu' set to true.
         return Recipes.find({inMenu: true});
     }

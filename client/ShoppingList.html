@@ -1,0 +1,18 @@
+<template name="ShoppingList">
+    <h1 class="page-title">My Shopping List</h1>
+
+    <ul class="shopping-list">
+        <!--Iterate through the return of the 'shoppingList' function (Recipes) in the
+        Template.ShoppingList.helpers() functions.-->
+        {{#each shoppingList}}
+            <!--Iterate through the 'ingredients' of returned 'Recipes'.-->
+            {{#each ingredients}}
+                <!--Display 'name' and 'amount' of the ingredients.-->
+                <li>{{name}} - <span class="amount">{{amount}}</span></li>
+            {{/each}}
+        {{else}}
+            <!--If there are no ingredients, show the following line.-->
+            <h3>Please add <a href="/recipe-book">recipes</a> to your menu!</h3>
+        {{/each}}
+    </ul>
+</template>
