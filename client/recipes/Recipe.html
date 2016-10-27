@@ -11,7 +11,11 @@
             {{/each}}
         </p>
         <a href="/recipe/{{_id}}">View Details</a>
-        <button class="btn-primary toggle-menu">Add To Menu</button>
-        <button class="btn-deny toggle-menu">Remove From Menu</button>
+        <!--Check the 'inMenu' variable of the recipe.-->
+        {{#if inMenu}}
+            <button class="btn-deny toggle-menu">Remove From Menu</button>
+        {{else}} <!--Show 'Add' button if recipe isn't in the menu.-->
+            <button class="btn-primary toggle-menu">Add To Menu</button>
+        {{/if}}
     </article>
 </template>

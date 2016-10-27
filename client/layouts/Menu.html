@@ -1,11 +1,21 @@
 <template name="Menu">
     <h1 class="page-title">My Current Menu</h1>
-    <!--Iterate through recipes and display 'name' and 'desc' of each one. -->
+    <!--Iterate through recipes and show 'MenuItem' template. -->
     {{#each recipes}}
+        <!--Display the 'MenuItem' template-->
+        {{> MenuItem}}
+    {{else}} <!--You can use 'else' conditionals in 'each' loops.-->
+        <h3>Please add <a href="/recipe-book">recipes</a> to your menu!</h3>
+    {{/each}}
+
+</template>
+
+<!--Minor menu item template.-->
+<template name="MenuItem">
+    <div class="menu-item">
         <!--Display 'name' info-->
         <h3>{{name}}</h3>
         <!--Display 'desc' info-->
         <p>{{desc}}</p>
-    {{/each}}
-
+    </div>
 </template>
