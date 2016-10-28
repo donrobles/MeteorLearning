@@ -11,6 +11,10 @@ Recipes.allow({
     }
 });
 
+/*
+ Create a 'SimpleSchema' named 'Ingredient' that can be attached to a collection
+ or used elsewhere.
+ */
 Ingredient = new SimpleSchema({
     name: {
         type: String,
@@ -20,6 +24,10 @@ Ingredient = new SimpleSchema({
     }
 });
 
+/*
+ Create a 'SimpleSchema' named 'RecipeSchema' that can be attached to a collection
+ or used elsewhere.
+ */
 RecipeSchema = new SimpleSchema({
     //Create a "name" object with properties.
     name: {
@@ -68,6 +76,9 @@ RecipeSchema = new SimpleSchema({
     }
 });
 
+/*
+ Meteor functions can be called from elsewhere.
+ */
 Meteor.methods({
     toggleMenuItem: function (id, currentState) {
         Recipes.update(id, {
@@ -78,4 +89,5 @@ Meteor.methods({
     }
 });
 
+//Attach the 'RecipeSchema' schema to the 'Recipes' collection.
 Recipes.attachSchema(RecipeSchema);
