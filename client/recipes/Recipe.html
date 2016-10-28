@@ -17,5 +17,7 @@
         {{else}} <!--Show 'Add' button if recipe isn't in the menu.-->
             <button class="btn-primary toggle-menu">Add To Menu</button>
         {{/if}}
+        {{> quickForm collection="Recipes" id=updateRecipeId type="update"
+                doc=this autosave=true}}
     </article>
 </template>
