@@ -1,6 +1,8 @@
+/* Imports */
+@import 'jeet'
+
 /* CSS declarations go here */
 normalize-css()
-
 // Material Shadows
 shadow-level(l = 1)
   if l == -1
@@ -117,13 +119,13 @@ p
     margin 0
 
 .main-layout
-  lost-center 90%
+  center(90%)
   margin-top 20px
   +above($med)
-    lost-center 90%
+    center(90%)
     padding-left $side-nav
   +above($large)
-    lost-center 80%
+    center(80%)
     margin-top 40px
     padding-left $side-nav-large
 
@@ -235,7 +237,7 @@ input, select, textarea
 
 .panel-body
   .form-group
-    lost-column 1 / 2
+    column(1 / 2)
 
 .autoform-remove-item.btn
   background light-grey
