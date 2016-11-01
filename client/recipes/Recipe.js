@@ -1,9 +1,30 @@
 /*
+ On creation of the 'Recipe' template, run this code.
+ */
+Template.Recipe.onCreated(function () {
+    this.editMode = new ReactiveVar(false);
+    /*
+     Alternative way to set reactive variable.
+
+     this.editMode = new ReactiveVar();
+     this.editMode.set(false);
+     */
+});
+
+/*
  Helper functions for the 'Recipe' template.
  */
 Template.Recipe.helpers({
+    //Used in the quickForm in Recipe.html
     updateRecipeId: function () {
         return this._id;
+    },
+    editMode: function () {
+        /*
+         Return the value of the 'editMode' variable of the instance
+         of the Template.
+         */
+        return Template.instance().editMode.get();
     }
 });
 
@@ -28,10 +49,11 @@ Template.Recipe.events({
     /*
      Trigger on a 'click' event of an element with class 'fa-pencil'.
      */
-    "click .fa-pencil": function () {
+    "click .fa-pencil": function (event, template) {
         /*
-         Set the Session variable 'editMode' to the opposite of what it's currently set to.
+         Set the reactive template variable 'editMode' to the opposite
+         of what it's currently set to.
          */
-        Session.set('editMode', !Session.get('editMode'));
+        template.editMode.set(!template.editMode.get());
     }
 });

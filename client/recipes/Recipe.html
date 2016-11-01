@@ -3,7 +3,7 @@
     <article class="recipe {{#if inMenu}}in-menu{{/if}}">
         <h3>{{name}}</h3>
         <!--Check if the Session variable 'editMode' is currently set.-->
-        {{#if $.Session.get 'editMode'}}
+        {{#if editMode}}
             <!--A quickForm that autoupdates changes to the ingredients of the recipe.-->
             {{> quickForm collection="Recipes" id=updateRecipeId type="update"
                     doc=this autosave=true}}
