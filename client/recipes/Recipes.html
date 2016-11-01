@@ -1,6 +1,13 @@
 <template name="Recipes">
-    {{> NewRecipe}}
+    <!--If the 'newRecipe' Session var exists, show NewRecipe template.-->
+    {{#if $.Session.get 'newRecipe'}}
+        {{> NewRecipe}}
+    {{else}}
+        <!--If 'newRecipe' Session var doesn't exist, show button-->
+        <button class="new-recipe">New Recipe</button>
+    {{/if}}
     <section class="recipes">
+        <!--Show the 'recipes' subscriptions when ready.-->
         {{#if Template.subscriptionsReady}}
             {{#each recipes}}
                 {{> Recipe}}

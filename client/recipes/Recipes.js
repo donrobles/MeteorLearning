@@ -13,3 +13,15 @@ Template.Recipes.helpers({
         return Recipes.find({});
     }
 });
+
+/*
+ Events for the Recipes templates
+ */
+Template.Recipes.events({
+    /*
+     When there is a 'click' event on an element with class 'new-recipe'
+     */
+    'click .new-recipe': () => {
+        Session.set('newRecipe', true);
+    }
+});
