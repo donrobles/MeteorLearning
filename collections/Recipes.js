@@ -80,12 +80,17 @@ RecipeSchema = new SimpleSchema({
  Meteor functions can be called from elsewhere.
  */
 Meteor.methods({
+    //Service-side function to change the 'inMenu' setting of a Recipe.
     toggleMenuItem: function (id, currentState) {
         Recipes.update(id, {
             $set: {
                 inMenu: !currentState
             }
         });
+    },
+    //Server-side function to remove the recipe of the given ID.
+    deleteRecipe: function (id) {
+        Recipes.remove(id);
     }
 });
 
