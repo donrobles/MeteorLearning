@@ -25,13 +25,13 @@ fortawesome:fontawesome
 spiderable
 fastclick
 raix:handlebar-helpers
-aldeed:collection2
+aldeed:collection2              # Adds allow/deny functionality to Mongo DB collections through SimpleSchemas
 aldeed:autoform
 accounts-ui
 accounts-password
 matb33:bootstrap-glyphicons
 zimme:active-route
 gwendall:auth-client-callbacks
-meteortoys:allthings
+meteortoys:allthings            # Meteor-designed development tools
 datariot:ganalytics
 check
